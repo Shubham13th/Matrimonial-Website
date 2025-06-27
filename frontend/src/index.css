@@ -1,1 +1,35 @@
 @import "tailwindcss";
+
+/* src/index.css or src/fonts.css */
+@font-face {
+  font-family: 'Dancing';
+  src: url('../src/assets/fonts/DancingScript-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-dancing: dancing, "sanserif";
+}
+
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #92400e; /* darker amber (same as hover) */
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+
